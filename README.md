@@ -1,6 +1,5 @@
-# laravel-ddd-starter
+# tinder-automation-webapp
 ## Descriptions
-便利なやつがいろいろ入ってる
 
 ## How To Set Up This App
 

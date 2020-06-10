@@ -29,6 +29,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "copy-webpack-plugin": "^5.1.1"
+        "copy-webpack-plugin": "^5.1.1",
+        "puppeteer": "^3.3.0"
     }
 }

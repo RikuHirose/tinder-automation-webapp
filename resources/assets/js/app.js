@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 import Vue from 'vue'
+import puppeteer from 'puppeteer'
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,8 +20,11 @@ import Vue from 'vue'
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
+Vue.use(puppeteer)
+
 // Vue.prototype.$axios = window.axios
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('integrate-tinder-button', require('./components/IntegrateTinderButton.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
