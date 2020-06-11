@@ -13,7 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <integrate-tinder-button
+                    :user-id="{{ json_encode(1) }}"
+                    ></integrate-tinder-button>
                 </div>
             </div>
         </div>

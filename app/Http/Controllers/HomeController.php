@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Nesk\Puphpeteer\Puppeteer;
 
 class HomeController extends Controller
 {
@@ -24,9 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        exec('node '.public_path('js/puppet.js'));
+        // exec('node '.public_path('js/puppet.js'));
 
-        // \SeoHelper::setIndexSeo();
-        // return view('home');
+        \SeoHelper::setIndexSeo();
+        return view('home');
     }
 }

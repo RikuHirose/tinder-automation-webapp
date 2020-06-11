@@ -2,15 +2,12 @@
 
 namespace App\Models;
 
-use App\Traits\PresenterBuildable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use PresenterBuildable;
-
     use Notifiable;
 
     /**
@@ -22,6 +19,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'x_auth_token',
     ];
 
     /**

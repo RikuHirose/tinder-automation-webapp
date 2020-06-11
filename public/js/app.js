@@ -1885,8 +1885,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var puppeteer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! puppeteer */ "puppeteer");
-/* harmony import */ var puppeteer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(puppeteer__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/api */ "./resources/assets/js/services/api.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -1901,10 +1900,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
- // eslint-disable-line
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {},
+  props: {
+    userId: {
+      required: true,
+      type: Number
+    }
+  },
   data: function data() {
     return {};
   },
@@ -1914,34 +1917,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _integrate = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var browser, page;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return puppeteer__WEBPACK_IMPORTED_MODULE_1___default.a.launch();
+                _context.prev = 0;
+                _context.next = 3;
+                return _services_api__WEBPACK_IMPORTED_MODULE_1__["postIntegrate"]({
+                  'user_id': this.userId
+                });
 
-              case 2:
-                browser = _context.sent;
-                _context.next = 5;
-                return browser.newPage();
+              case 3:
+                alert('tinderとの連携が完了しました');
+                _context.next = 9;
+                break;
 
-              case 5:
-                page = _context.sent;
-                _context.next = 8;
-                return page["goto"]('https://example.com');
+              case 6:
+                _context.prev = 6;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0);
 
-              case 8:
-                _context.next = 10;
-                return browser.close();
-
-              case 10:
+              case 9:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this, [[0, 6]]);
       }));
 
       function integrate() {
@@ -50475,15 +50476,12 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var puppeteer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! puppeteer */ "puppeteer");
-/* harmony import */ var puppeteer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(puppeteer__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
-
 
 
 /**
@@ -50495,8 +50493,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
  */
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(puppeteer__WEBPACK_IMPORTED_MODULE_1___default.a); // Vue.prototype.$axios = window.axios
+// Vue.prototype.$axios = window.axios
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/assets/js/components/ExampleComponent.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('integrate-tinder-button', __webpack_require__(/*! ./components/IntegrateTinderButton.vue */ "./resources/assets/js/components/IntegrateTinderButton.vue")["default"]);
@@ -50710,6 +50707,41 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/assets/js/services/api.js":
+/*!*********************************************!*\
+  !*** ./resources/assets/js/services/api.js ***!
+  \*********************************************/
+/*! exports provided: postIntegrate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _postIntegrate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./postIntegrate */ "./resources/assets/js/services/postIntegrate.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "postIntegrate", function() { return _postIntegrate__WEBPACK_IMPORTED_MODULE_0__["postIntegrate"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/services/postIntegrate.js":
+/*!*******************************************************!*\
+  !*** ./resources/assets/js/services/postIntegrate.js ***!
+  \*******************************************************/
+/*! exports provided: postIntegrate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postIntegrate", function() { return postIntegrate; });
+function postIntegrate(formData) {
+  var config = {};
+  return axios.post('/api/v1/users/integrate', formData, config).then(function (res) {
+    res.data;
+  }); // eslint-disable-line
+}
+
+/***/ }),
+
 /***/ "./resources/assets/sass/app.scss":
 /*!****************************************!*\
   !*** ./resources/assets/sass/app.scss ***!
@@ -50731,17 +50763,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! /Users/rikuparkour1996/www/tinder-automation-webapp/resources/assets/js/app.js */"./resources/assets/js/app.js");
 module.exports = __webpack_require__(/*! /Users/rikuparkour1996/www/tinder-automation-webapp/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
 
-
-/***/ }),
-
-/***/ "puppeteer":
-/*!*****************************************!*\
-  !*** external "require(\"puppeteer\")" ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("puppeteer");
 
 /***/ })
 

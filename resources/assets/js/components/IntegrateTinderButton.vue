@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import puppeteer from 'puppeteer'  // eslint-disable-line
+import * as api from '../services/api'
 export default {
   props: {
-
+    userId: {required: true, type: Number},
   },
   data (){
     return {
@@ -21,12 +21,13 @@ export default {
 
   methods: {
     async integrate () {
-      const browser = await puppeteer.launch();
-      const page = await browser.newPage();
-      await page.goto('https://example.com');
-      // await page.screenshot({path: 'example.png'});
+      try {
+          await api.postIntegrate({'user_id': this.userId})
 
-      await browser.close();
+          alert('tinderとの連携が完了しました')
+      } catch (error) {
+          console.log(error)
+      }
     },
   }
 }
