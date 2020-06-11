@@ -40,10 +40,11 @@
       23 => 'Jenssegers\\Agent\\AgentServiceProvider',
       24 => 'App\\Providers\\AppServiceProvider',
       25 => 'App\\Providers\\AuthServiceProvider',
-      26 => 'App\\Providers\\UseCaseServiceProvider',
-      27 => 'App\\Providers\\EventServiceProvider',
+      26 => 'App\\Providers\\EventServiceProvider',
+      27 => 'App\\Providers\\ExternalApiServiceProvider',
       28 => 'App\\Providers\\RouteServiceProvider',
       29 => 'App\\Providers\\HelperServiceProvider',
+      30 => 'App\\Providers\\UseCaseServiceProvider',
     ),
     'aliases' => 
     array (

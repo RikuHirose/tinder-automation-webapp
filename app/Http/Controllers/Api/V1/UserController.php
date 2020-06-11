@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 
+use packages\Infrastructure\ExternalApi\Tinder\TinderExternalApiInterface;
+
 class UserController extends Controller
 {
-    // public function storeToken(Request $request)
-    // {
-    //     logger($request->input('x_auth_token'));
+    protected $tinderExternalApi;
 
-    //     $user->fill([
-    //       'x_auth_token' => $request->input('x_auth_token')
-    //     ])->save();
-
-    //     return response()->json(['success' => true])
-    // }
+    public function __construct(
+        TinderExternalApiInterface $tinderExternalApi
+    )
+    {
+        $this->tinderExternalApi = $tinderExternalApi;
+    }
 
     public function integrate(Request $request)
     {
@@ -31,5 +31,19 @@ class UserController extends Controller
         ])->save();
 
         return response()->json(['success' => true]);
+    }
+
+    public function swipe(Request $request)
+    {
+        // FIXME loop in loop する
+
+        $user          = User::where('id', $request->input('user_id'))->first();
+        $tinderUsers   = $this->tinderExternalApi->fetchUserList($user->x_auth_token);
+
+        foreach ($tinderUsers as $key => $tinderUser) {
+            $response = $this->tinderExternalApi->swipe($user->x_auth_token, $tinderUser['user']['_id']);
+            \Log::info($tinderUser['user']['_id']);
+            logger($response);
+        }
     }
 }

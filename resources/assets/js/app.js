@@ -21,8 +21,8 @@ import Vue from 'vue'
 
 
 // Vue.prototype.$axios = window.axios
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('integrate-tinder-button', require('./components/IntegrateTinderButton.vue').default);
+Vue.component('swipe-tinder-button', require('./components/SwipeTinderButton.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

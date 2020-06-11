@@ -36,10 +36,11 @@
     32 => 'Jenssegers\\Agent\\AgentServiceProvider',
     33 => 'App\\Providers\\AppServiceProvider',
     34 => 'App\\Providers\\AuthServiceProvider',
-    35 => 'App\\Providers\\UseCaseServiceProvider',
-    36 => 'App\\Providers\\EventServiceProvider',
+    35 => 'App\\Providers\\EventServiceProvider',
+    36 => 'App\\Providers\\ExternalApiServiceProvider',
     37 => 'App\\Providers\\RouteServiceProvider',
     38 => 'App\\Providers\\HelperServiceProvider',
+    39 => 'App\\Providers\\UseCaseServiceProvider',
   ),
   'eager' => 
   array (
@@ -63,10 +64,11 @@
     17 => 'Jenssegers\\Agent\\AgentServiceProvider',
     18 => 'App\\Providers\\AppServiceProvider',
     19 => 'App\\Providers\\AuthServiceProvider',
-    20 => 'App\\Providers\\UseCaseServiceProvider',
-    21 => 'App\\Providers\\EventServiceProvider',
+    20 => 'App\\Providers\\EventServiceProvider',
+    21 => 'App\\Providers\\ExternalApiServiceProvider',
     22 => 'App\\Providers\\RouteServiceProvider',
     23 => 'App\\Providers\\HelperServiceProvider',
+    24 => 'App\\Providers\\UseCaseServiceProvider',
   ),
   'deferred' => 
   array (

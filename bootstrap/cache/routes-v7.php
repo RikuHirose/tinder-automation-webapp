@@ -18,13 +18,13 @@ app('router')->setCompiledRoutes(
     0 => false,
     1 => 
     array (
-      '/api/v1/users/token' => 
+      '/api/v1/users/integrate' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'api.v1.users.storeToken',
+            '_route' => 'api.v1.users.integrate',
           ),
           1 => NULL,
           2 => 
@@ -37,13 +37,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/api/v1/users/integrate' => 
+      '/api/v1/users/swipe' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'api.v1.users.integrate',
+            '_route' => 'api.v1.users.swipe',
           ),
           1 => NULL,
           2 => 
@@ -79,7 +79,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::W1OFAFO704ZM4Jzn',
+            '_route' => 'generated::44FpfM5RpTNuhE4E',
           ),
           1 => NULL,
           2 => 
@@ -134,7 +134,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::o4BeRpAz1oxLdLZh',
+            '_route' => 'generated::5up6OKLAuLRlQFDG',
           ),
           1 => NULL,
           2 => 
@@ -267,22 +267,22 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'api.v1.users.storeToken' => 
+    'api.v1.users.integrate' => 
     array (
       'methods' => 
       array (
         0 => 'POST',
       ),
-      'uri' => 'api/v1/users/token',
+      'uri' => 'api/v1/users/integrate',
       'action' => 
       array (
         'middleware' => 
         array (
           0 => 'api',
         ),
-        'uses' => 'App\\Http\\Controllers\\Api\\V1\\UserController@storeToken',
-        'controller' => 'App\\Http\\Controllers\\Api\\V1\\UserController@storeToken',
-        'as' => 'api.v1.users.storeToken',
+        'uses' => 'App\\Http\\Controllers\\Api\\V1\\UserController@integrate',
+        'controller' => 'App\\Http\\Controllers\\Api\\V1\\UserController@integrate',
+        'as' => 'api.v1.users.integrate',
         'namespace' => 'App\\Http\\Controllers\\Api\\V1',
         'prefix' => 'api/v1/users',
         'where' => 
@@ -302,22 +302,22 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'api.v1.users.integrate' => 
+    'api.v1.users.swipe' => 
     array (
       'methods' => 
       array (
         0 => 'POST',
       ),
-      'uri' => 'api/v1/users/integrate',
+      'uri' => 'api/v1/users/swipe',
       'action' => 
       array (
         'middleware' => 
         array (
           0 => 'api',
         ),
-        'uses' => 'App\\Http\\Controllers\\Api\\V1\\UserController@integrate',
-        'controller' => 'App\\Http\\Controllers\\Api\\V1\\UserController@integrate',
-        'as' => 'api.v1.users.integrate',
+        'uses' => 'App\\Http\\Controllers\\Api\\V1\\UserController@swipe',
+        'controller' => 'App\\Http\\Controllers\\Api\\V1\\UserController@swipe',
+        'as' => 'api.v1.users.swipe',
         'namespace' => 'App\\Http\\Controllers\\Api\\V1',
         'prefix' => 'api/v1/users',
         'where' => 
@@ -373,7 +373,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::W1OFAFO704ZM4Jzn' => 
+    'generated::44FpfM5RpTNuhE4E' => 
     array (
       'methods' => 
       array (
@@ -393,7 +393,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::W1OFAFO704ZM4Jzn',
+        'as' => 'generated::44FpfM5RpTNuhE4E',
       ),
       'fallback' => false,
       'defaults' => 
@@ -479,7 +479,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::o4BeRpAz1oxLdLZh' => 
+    'generated::5up6OKLAuLRlQFDG' => 
     array (
       'methods' => 
       array (
@@ -499,7 +499,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::o4BeRpAz1oxLdLZh',
+        'as' => 'generated::5up6OKLAuLRlQFDG',
       ),
       'fallback' => false,
       'defaults' => 
