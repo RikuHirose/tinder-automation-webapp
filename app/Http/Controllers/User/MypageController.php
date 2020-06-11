@@ -1,19 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class MypageController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct
+    (
+    )
     {
-        
+
     }
 
     /**
@@ -21,9 +24,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function show()
     {
-        \SeoHelper::setIndexSeo();
-        return view('home');
+        // \SeoHelper::setIndexSeo();
+
+        return view('pages.mypage.show');
     }
 }

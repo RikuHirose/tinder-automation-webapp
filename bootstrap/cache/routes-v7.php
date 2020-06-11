@@ -79,7 +79,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::44FpfM5RpTNuhE4E',
+            '_route' => 'generated::XZ16A5ksbueT9Uts',
           ),
           1 => NULL,
           2 => 
@@ -134,7 +134,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::5up6OKLAuLRlQFDG',
+            '_route' => 'generated::iFd5ze2vxElFPKND',
           ),
           1 => NULL,
           2 => 
@@ -215,6 +215,101 @@ app('router')->setCompiledRoutes(
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/mypage' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'mypage.show',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/mypage/edit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'mypage.edit',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/mypage/update' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'mypage.update',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/mypage/password' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'mypage.edit.password',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'mypage.update.password',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -373,7 +468,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::44FpfM5RpTNuhE4E' => 
+    'generated::XZ16A5ksbueT9Uts' => 
     array (
       'methods' => 
       array (
@@ -393,7 +488,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::44FpfM5RpTNuhE4E',
+        'as' => 'generated::XZ16A5ksbueT9Uts',
       ),
       'fallback' => false,
       'defaults' => 
@@ -479,7 +574,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::5up6OKLAuLRlQFDG' => 
+    'generated::iFd5ze2vxElFPKND' => 
     array (
       'methods' => 
       array (
@@ -499,7 +594,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::5up6OKLAuLRlQFDG',
+        'as' => 'generated::iFd5ze2vxElFPKND',
       ),
       'fallback' => false,
       'defaults' => 
@@ -678,6 +773,189 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'home',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'mypage.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'mypage',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\MypageController@show',
+        'controller' => 'App\\Http\\Controllers\\User\\MypageController@show',
+        'as' => 'mypage.show',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => '/mypage',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'mypage.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'mypage/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\MypageController@edit',
+        'controller' => 'App\\Http\\Controllers\\User\\MypageController@edit',
+        'as' => 'mypage.edit',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => '/mypage',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'mypage.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'mypage/update',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\MypageController@update',
+        'controller' => 'App\\Http\\Controllers\\User\\MypageController@update',
+        'as' => 'mypage.update',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => '/mypage',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'mypage.edit.password' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'mypage/password',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\MypageController@editPassword',
+        'controller' => 'App\\Http\\Controllers\\User\\MypageController@editPassword',
+        'as' => 'mypage.edit.password',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => '/mypage',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'mypage.update.password' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'mypage/password',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\MypageController@updatePassword',
+        'controller' => 'App\\Http\\Controllers\\User\\MypageController@updatePassword',
+        'as' => 'mypage.update.password',
+        'namespace' => 'App\\Http\\Controllers',
+        'prefix' => '/mypage',
+        'where' => 
+        array (
+        ),
       ),
       'fallback' => false,
       'defaults' => 

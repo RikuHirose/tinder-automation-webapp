@@ -24,7 +24,7 @@ export default {
       try {
           await api.postSwipe({'user_id': this.userId})
 
-          alert('tinderとの連携が完了しました')
+          alert('swipe完了しました')
       } catch (error) {
           console.log(error)
       }

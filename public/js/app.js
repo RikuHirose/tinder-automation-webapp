@@ -1977,7 +1977,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 3:
-                alert('tinderとの連携が完了しました');
+                alert('swipe完了しました');
                 _context.next = 9;
                 break;
 

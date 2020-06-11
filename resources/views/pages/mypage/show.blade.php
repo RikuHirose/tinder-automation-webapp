@@ -13,6 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <swipe-tinder-button
+                    :user-id="{{ json_encode(auth()->user()->id) }}"
+                    ></swipe-tinder-button>
+
+                    <integrate-tinder-button
+                    :user-id="{{ json_encode(auth()->user()->id) }}"
+                    ></integrate-tinder-button>
                 </div>
             </div>
         </div>
