@@ -1,35 +1,17 @@
-// require('../../resources/assets/js/bootstrap');
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-axios = require('axios');
-
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-/**
- * Next we will register the CSRF Token as a common header with Axios so that
- * all outgoing HTTP requests automatically have it attached. This is just
- * a simple convenience so we don't have to attach every token manually.
- */
-
-// let token = document.head.querySelector('meta[name="csrf-token"]');
-
-// if (token) {
-//     axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-// } else {
-//     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-// }
-
-
 const puppeteer = require('puppeteer');
 
 // run node  public/js/puppet.js
 
 (async () => {
-  const browser = await puppeteer.launch({headless: false});
+  const browser = await puppeteer.launch({ args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '-–disable-dev-shm-usage',
+      '--disable-gpu',
+      '--no-first-run',
+      '--no-zygote',
+      '--single-process',
+    ],headless: false});
   const page = await browser.newPage();
 
   // loginする
@@ -59,7 +41,6 @@ const puppeteer = require('puppeteer');
       if (data.request.headers["X-Auth-Token"] !== '') {
         auth_token = data.request.headers["X-Auth-Token"]
         console.log(auth_token)
-        // await postToken(auth_token)
       }
     }
   }
@@ -85,11 +66,5 @@ const puppeteer = require('puppeteer');
       // addCDPRequestDataListener('Network.responseReceived')
       // addCDPRequestDataListener('Network.responseReceivedExtraInfo')
       return cdpRequestDataRaw
-  }
-
-  async function postToken(token) {
-    return axios.post('http://127.0.0.1:8000/api/v1/users/token', {'x_auth_token': token})
-    .then(res => {res.data})
-    .catch(err => {console.log(err)})
   }
 })();
