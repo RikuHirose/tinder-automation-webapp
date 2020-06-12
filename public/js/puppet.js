@@ -3,15 +3,10 @@ const puppeteer = require('puppeteer');
 // run node  public/js/puppet.js
 
 (async () => {
-  const browser = await puppeteer.launch({ args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '-–disable-dev-shm-usage',
-      '--disable-gpu',
-      '--no-first-run',
-      '--no-zygote',
-      '--single-process',
-    ],headless: false});
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--single-process'],
+    headless: false
+  });
   const page = await browser.newPage();
 
   // loginする
