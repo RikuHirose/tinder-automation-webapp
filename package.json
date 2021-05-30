@@ -32,6 +32,6 @@
     "dependencies": {
         "copy-webpack-plugin": "^5.1.1",
         "puppeteer": "^3.3.0",
-        "ws": "^7.3.0"
+        "ws": "^7.4.6"
     }
 }
